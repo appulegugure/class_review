@@ -1,6 +1,6 @@
 class Customer:
-    def __init__(self, first_name, last_name, age):
-        self.fullname = first_name + " " + last_name
+    def __init__(self, first_name, family_name, age):
+        self.fullname = first_name + " " + family_name
         self.age = age
         if self.age < 4:
             self.entry_tree = 0

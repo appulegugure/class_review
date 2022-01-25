@@ -1,10 +1,10 @@
 class Customer:
-    def __init__(self, first_name, last_name, age):
-        self.fullname = first_name + " " + last_name
+    def __init__(self, first_name, family_name, age):
+        self.fullname = first_name + " " + family_name
         self.age = age
         if self.age < 20:
             self.entry_tree = 1000
-        elif 20 >= self.age < 65:
+        elif self.age < 65:
             self.entry_tree = 1500
         else:
             self.entry_tree = 1200
@@ -13,11 +13,14 @@ class Customer:
         return self.fullname
 
     def info_csv(self):
-        return ','.join([self.fullname, str(self.age), str(self.entry_tree)])
+        print(','.join([self.fullname, str(self.age), str(self.entry_tree)]))
 
 
-t = Customer("Tom", "Ford", 45)
-print(t.info_csv())
+ken = Customer(first_name="Ken", family_name="Tanaka", age=15)
+ken.info_csv()  # "Ken Tanaka,15,1000" という値を返す
 
-p = Customer("Give", "Me", 35)
-print(p.info_csv())
+tom = Customer(first_name="Tom", family_name="Ford", age=57)
+ken.info_csv()  # "Tom Ford,57,1500" という値を返す
+
+ieyasu = Customer(first_name="Ieyasu", family_name="Tokugawa", age=73)
+ieyasu.info_csv()  # "Ieyasu Tokugawa,73,1200" という値を返す
